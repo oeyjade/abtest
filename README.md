@@ -9,9 +9,7 @@ for acting on it. The recommendation is to leave the gate where it is, and the
 interesting part is *why a significant result is not automatically a reason to
 ship*.
 
-![Results](output/results.png)
-
-**Read the [one-page memo](output/memo.md) first.** It is written for a product
+**Read the one-page memo first.** It is written for a product
 manager, not a statistician, and it is the actual output of this project. The
 code exists to make the memo trustworthy.
 
