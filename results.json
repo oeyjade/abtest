@@ -1,0 +1,199 @@
+{
+  "sanity": {
+    "srm": {
+      "test": "srm_chi2",
+      "n_a": 44867,
+      "n_b": 45132,
+      "observed_ratio_a": 0.49852776141957134,
+      "expected_ratio_a": 0.5,
+      "chi2": 0.7802864476271959,
+      "p_value": 0.37705354824354986,
+      "passed": true,
+      "alarm_p": 0.001
+    }
+  },
+  "power": {
+    "mde": {
+      "baseline_rate": 0.11667818218289612,
+      "n_per_arm": 44867,
+      "alpha": 0.05,
+      "power": 0.8,
+      "cohens_h": 0.01870486929644232,
+      "mde_absolute": 0.006071649007245855,
+      "mde_relative": 0.05203756943803243
+    }
+  },
+  "primary": {
+    "result": {
+      "test": "two_proportion_z",
+      "rate_a": 0.11667818218289612,
+      "rate_b": 0.11151732695205176,
+      "n_a": 44867,
+      "n_b": 45132,
+      "abs_diff": -0.005160855230844363,
+      "rel_lift": -0.04423153613033315,
+      "z_stat": -2.434948547636859,
+      "p_value": 0.014893907368548715,
+      "ci_low": -0.009315088416921708,
+      "ci_high": -0.0010066220447670186,
+      "alpha": 0.05,
+      "significant": true
+    },
+    "decision": {
+      "verdict": "SHIP_NO",
+      "rationale": "The effect is real but smaller than the pre-registered threshold. The treatment is reliably worse than control by an amount too small to justify acting on.",
+      "practical_threshold": 0.01,
+      "observed_effect": -0.005160855230844363,
+      "ci": [
+        -0.009315088416921708,
+        -0.0010066220447670186
+      ]
+    }
+  },
+  "guardrails": {
+    "retention_1": {
+      "test": "two_proportion_z",
+      "rate_a": 0.4487485234136448,
+      "rate_b": 0.4454045909775769,
+      "n_a": 44867,
+      "n_b": 45132,
+      "abs_diff": -0.003343932436067898,
+      "rel_lift": -0.007451684544008064,
+      "z_stat": -1.0088380747277503,
+      "p_value": 0.3130522976387845,
+      "ci_low": -0.009840479368010855,
+      "ci_high": 0.0031526144958750595,
+      "alpha": 0.05,
+      "significant": false
+    },
+    "sum_gamerounds": {
+      "welch": {
+        "test": "welch_t",
+        "mean_a": 94.58506251810908,
+        "mean_b": 89.60657626517771,
+        "n_a": 44867,
+        "n_b": 45132,
+        "abs_diff": -4.978486252931376,
+        "rel_lift": -0.05263501572437195,
+        "t_stat": 2.302535350948271,
+        "df": 89996.9838446308,
+        "p_value": 0.02130727049212682,
+        "ci_low": -9.216329976443369,
+        "ci_high": -0.7406425294193824,
+        "significant": true
+      },
+      "bootstrap": {
+        "test": "bootstrap",
+        "statistic": "mean",
+        "n_boot": 5000,
+        "abs_diff": -4.978486252931376,
+        "ci_low": -9.198040342363779,
+        "ci_high": -0.6763770185139636,
+        "excludes_zero": true
+      },
+      "bootstrap_median": {
+        "test": "bootstrap",
+        "statistic": "median",
+        "n_boot": 5000,
+        "abs_diff": 0.0,
+        "ci_low": -1.0,
+        "ci_high": 0.0,
+        "excludes_zero": false
+      }
+    }
+  },
+  "segments": {
+    "segments": [
+      {
+        "segment": "Q1 lowest",
+        "test": "two_proportion_z",
+        "rate_a": 0.09440795014316995,
+        "rate_b": 0.08596227674845602,
+        "n_a": 11874,
+        "n_b": 11982,
+        "abs_diff": -0.008445673394713929,
+        "rel_lift": -0.08945934512830793,
+        "z_stat": -2.2771737841307886,
+        "p_value": 0.022775849985538256,
+        "ci_low": -0.015715464750918555,
+        "ci_high": -0.0011758820385093013,
+        "alpha": 0.05,
+        "significant": true,
+        "p_adjusted": 0.09110339994215302,
+        "significant_after_bh": false
+      },
+      {
+        "segment": "Q2",
+        "test": "two_proportion_z",
+        "rate_a": 0.10515559684161635,
+        "rate_b": 0.10489700036140225,
+        "n_a": 10765,
+        "n_b": 11068,
+        "abs_diff": -0.0002585964802141044,
+        "rel_lift": -0.0024591794253576273,
+        "z_stat": -0.062309835111511364,
+        "p_value": 0.9503160964113276,
+        "ci_low": -0.008392904413469763,
+        "ci_high": 0.007875711453041554,
+        "alpha": 0.05,
+        "significant": false,
+        "p_adjusted": 0.9503160964113276,
+        "significant_after_bh": false
+      },
+      {
+        "segment": "Q3",
+        "test": "two_proportion_z",
+        "rate_a": 0.11952770208901,
+        "rate_b": 0.11857601713062098,
+        "n_a": 11010,
+        "n_b": 11208,
+        "abs_diff": -0.0009516849583890152,
+        "rel_lift": -0.007962045130595029,
+        "z_stat": -0.2190089539329542,
+        "p_value": 0.8266430728522395,
+        "ci_low": -0.00946879651130071,
+        "ci_high": 0.0075654265945226794,
+        "alpha": 0.05,
+        "significant": false,
+        "p_adjusted": 0.9503160964113276,
+        "significant_after_bh": false
+      },
+      {
+        "segment": "Q4 highest",
+        "test": "two_proportion_z",
+        "rate_a": 0.14851132109110357,
+        "rate_b": 0.13913923119367297,
+        "n_a": 11218,
+        "n_b": 10874,
+        "abs_diff": -0.009372089897430602,
+        "rel_lift": -0.06310690544380343,
+        "z_stat": -1.9841790961870533,
+        "p_value": 0.04723587802068753,
+        "ci_low": -0.018625069683403127,
+        "ci_high": -0.00011911011145807754,
+        "alpha": 0.05,
+        "significant": true,
+        "p_adjusted": 0.09447175604137506,
+        "significant_after_bh": false
+      }
+    ],
+    "bh": {
+      "method": "benjamini_hochberg",
+      "fdr": 0.05,
+      "n_tests": 4,
+      "n_rejected": 0,
+      "rejected": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "p_adjusted": [
+        0.09110339994215302,
+        0.9503160964113276,
+        0.9503160964113276,
+        0.09447175604137506
+      ]
+    }
+  }
+}
